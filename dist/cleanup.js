@@ -10,11 +10,11 @@ const { execSync } = __webpack_require__(129)
 
 try {
     // Kill the started SSH agent
-    console.log('Stopping SSH agent')
+    core.info('Stopping SSH agent')
     execSync('kill ${SSH_AGENT_PID}', { stdio: 'inherit' })
 } catch (error) {
-    console.log(error.message);
-    console.log('Error stopping the SSH agent, proceeding anyway');
+    core.info(error.message);
+    core.info('Error stopping the SSH agent, proceeding anyway');
 }
 
 
